@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import EditForm from "./components/EditForm";
+import CreateForm from "./components/CreateForm";
+// import FetchData from "./FetchData";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import { AddressBookContext } from "./Contexts/AddressBookContext";
+import { Route, Routes } from "react-router-dom";
+import BadRequest from "./components/BadRequest";
 
 function App() {
+  const [contacts, setContacts] = useState([]);
+  const [storage, setStorage] = useState("");
+  console.log("APP STATE: ", contacts);
+  console.log("APP STORAGE:", storage);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <Header />
       </header>
-    </div>
+      <div className="app-container">
+        <AddressBookContext.Provider
+          value={{ setContacts, contacts, storage, setStorage }}
+        >
+          <Routes>
+            <Route exact path="/" element={<CreateForm />} />
+            <Route exact path="/view" element={<EditForm />} />
+            <Route path="*" element={<BadRequest />} />
+          </Routes>
+        </AddressBookContext.Provider>
+      </div>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }
 

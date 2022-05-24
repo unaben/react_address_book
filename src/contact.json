@@ -1,0 +1,30 @@
+{
+  "postcode": "SW1A 2AA",
+  "latitude": 51.503038,
+  "longitude": -0.128371,
+  "addresses": [
+  {
+      "formatted_address": [
+      "Prime Minister & First Lord of the Treasury",
+      "10 Downing Street",
+      "",
+      "London",
+      ""
+      ],
+      "thoroughfare": "Downing Street",
+      "building_name": "",
+      "sub_building_name": "Prime Minister & First Lord of the Treasury",
+      "sub_building_number": "",
+      "building_number": "10",
+      "line_1": "Prime Minister & First Lord of the Treasury",
+      "line_2": "10 Downing Street",
+      "line_3": "",
+      "line_4": "",
+      "locality": "",
+      "town_or_city": "London",
+      "county": "",
+      "district": "Westminster",
+      "country": "England"
+  }
+  ]
+  }

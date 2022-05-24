@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "result": [
+    {
+      "query": "B17 8JH",
+      "result": {
+        "postcode": "B17 8JH",
+        "quality": 1,
+        "eastings": 402869,
+        "northings": 287050,
+        "country": "England",
+        "nhs_ha": "West Midlands",
+        "longitude": -1.959184,
+        "latitude": 52.481367,
+        "european_electoral_region": "West Midlands",
+        "primary_care_trust": "South Birmingham",
+        "region": "West Midlands",
+        "lsoa": "Birmingham 060A",
+        "msoa": "Birmingham 060",
+        "incode": "8JH",
+        "outcode": "B17",
+        "parliamentary_constituency": "Birmingham, Edgbaston",
+        "admin_district": "Birmingham",
+        "parish": "Birmingham, unparished area",
+        "admin_county": null,
+        "admin_ward": "North Edgbaston",
+        "ced": null,
+        "ccg": "NHS Birmingham and Solihull",
+        "nuts": "Birmingham",
+        "codes": {
+          "admin_district": "E08000025",
+          "admin_county": "E99999999",
+          "admin_ward": "E05011157",
+          "parish": "E43000250",
+          "parliamentary_constituency": "E14000560",
+          "ccg": "E38000220",
+          "ccg_id": "15E",
+          "ced": "E99999999",
+          "nuts": "TLG31",
+          "lsoa": "E01009138",
+          "msoa": "E02001886",
+          "lau2": "E08000025"
+        }
+      }
+    }
+  ]
+}
