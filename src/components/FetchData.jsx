@@ -23,7 +23,7 @@ export default function FetchData({ storage, setStorage }) {
             navigate("*");
             throw Error("Could not fetch data");
           } else {
-          return  res.json();
+            return res.json();
           }
         })
         .then((data) => {
@@ -32,7 +32,7 @@ export default function FetchData({ storage, setStorage }) {
           setStorage(data.result);
         })
         .catch((error) => {
-          console.log({error: error.message});
+          console.log({ error: error.message });
         });
     }
   }, [selectedPostcode]);
