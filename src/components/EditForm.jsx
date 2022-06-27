@@ -21,13 +21,6 @@ export default function EditForm() {
 
   const [editContactId, setEditContactId] = useState(null);
 
-  console.log(
-    "Inside EditContacts Func:",
-    contacts,
-    editContactData,
-    editContactId
-  );
-
   const handleEditFormChange = (event) => {
     event.preventDefault();
 
@@ -38,8 +31,6 @@ export default function EditForm() {
 
     const newContactData = { ...editContactData };
     newContactData[name] = value;
-
-    console.log("Inside handleEditFormChange Func: ", newContactData);
 
     setEditContactData(newContactData);
   };
@@ -59,15 +50,12 @@ export default function EditForm() {
       email: editContactData.email,
     };
 
-    console.log("contactToUpdate: ", contactToUpdate);
-
     const newContacts = [...contacts];
 
     const index = contacts.findIndex((contact) => contact.id === editContactId);
     console.log("Index: ", index);
 
     newContacts[index] = contactToUpdate;
-    console.log("newContacts[index]: ", newContacts[index]);
 
     setContacts(newContacts);
     setEditContactId(null);
@@ -103,22 +91,19 @@ export default function EditForm() {
 
   return (
     <>
-    <div className="home_btn">
-      <button
-        className="btn"     
-        type="click"
-      >
-        <Link
-          to="/"
-          style={{
-            listStyleType: "none",
-            textDecoration: "none",
-            color: "white",
-          }}
-        >
-          Back To form
-        </Link>
-      </button>
+      <div className="home_btn">
+        <button className="btn" type="click">
+          <Link
+            to="/"
+            style={{
+              listStyleType: "none",
+              textDecoration: "none",
+              color: "white",
+            }}
+          >
+            Back To form
+          </Link>
+        </button>
       </div>
       <div className="edit-container">
         {contacts &&

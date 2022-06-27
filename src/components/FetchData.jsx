@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function FetchData({ storage, setStorage }) {
+export default function FetchData({ setStorage }) {
   const navigate = useNavigate();
 
-  // const [storage, setstorage] = useState("");
   const [selectedPostcode, setSelectedPostcode] = useState("");
   const [selectedInput, setselectedInput] = useState("");
 
-  console.log("Postcode: ", selectedPostcode);
-  console.log("State: ", storage);
-
-  // Async and await function
-  useEffect(() => {
+  const fetchApiData = () => {
     const url = `https://api.postcodes.io/postcodes/${selectedPostcode}`;
-    // const url = `https://api.postcodes.io/postcodes/b184dg`;
+
     if (selectedPostcode) {
       fetch(url)
         .then((res) => {
@@ -28,13 +23,16 @@ export default function FetchData({ storage, setStorage }) {
         })
         .then((data) => {
           console.log("Fetch: ", data);
-          // setstorage([...storage, data.result]);
           setStorage(data.result);
         })
         .catch((error) => {
           console.log({ error: error.message });
         });
     }
+  };
+
+  useEffect(() => {
+    fetchApiData();
   }, [selectedPostcode]);
 
   const handleSubmit = (e) => {

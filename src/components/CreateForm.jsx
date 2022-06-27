@@ -1,6 +1,4 @@
 import React, { useState, useContext } from "react";
-// import contactData from "./data.json";
-// import data from "./contact.json";
 import { nanoid } from "nanoid";
 import FetchData from "./FetchData";
 import { AddressBookContext } from "../Contexts/AddressBookContext";
@@ -8,16 +6,15 @@ import { useNavigate } from "react-router-dom";
 
 export default function CreateForm() {
   const { setContacts, storage, setStorage } = useContext(AddressBookContext);
-  console.log("Func CreateForm: ", storage.postcode);
 
   let navigate = useNavigate();
 
   const [name, setName] = useState("");
-  const [postcode, setPostcode] = useState(storage.postcode);
+  const [postcode] = useState(storage.postcode);
   const [addressOne, setAddressOne] = useState("");
   const [addressTwo, setAddressTwo] = useState("");
-  const [city, setCity] = useState(storage.admin_district);
-  const [county, setCounty] = useState(storage.region);
+  const [city] = useState(storage.admin_district);
+  const [county] = useState(storage.region);
   const [telephone, setTelephone] = useState("");
   const [email, setEmail] = useState("");
 
@@ -46,10 +43,10 @@ export default function CreateForm() {
   return (
     <div className="create_form-container">
       <div className="form_wrapper">
+        <FetchData storage={storage} setStorage={setStorage} />
         <div className="form_title">
           <h2>Create Form</h2>
         </div>
-        <FetchData storage={storage} setStorage={setStorage} />
         <form onSubmit={handleSubmit}>
           <div className="two_column_grid">
             <div>

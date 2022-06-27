@@ -6,7 +6,6 @@ export default function EditInputForm({
   handleCancelClick,
   handleEditFormSubmit,
 }) {
-  console.log("here: ", editContactData);
   return (
     <div className="container center">
       <input

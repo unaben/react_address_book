@@ -12,8 +12,6 @@ import BadRequest from "./components/BadRequest";
 function App() {
   const [contacts, setContacts] = useState([]);
   const [storage, setStorage] = useState("");
-  console.log("APP STATE: ", contacts);
-  console.log("APP STORAGE:", storage);
   return (
     <>
       <header>
